@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "MedYouMore+",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://*.vimeo.com/*"],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
