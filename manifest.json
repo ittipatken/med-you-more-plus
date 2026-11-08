@@ -2,9 +2,28 @@
   "manifest_version": 3,
   "name": "MedYouMore+",
   "version": "1.0",
-  "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["https://*.vimeo.com/*"],
+  "description": "A browser extension designed to extend the functionality of the MedUMore platform",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.medumore.org/*",
+    "https://*.vimeo.com/*"
+  ],
   "action": {
     "default_popup": "index.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.medumore.org/*",
+        "https://*.vimeo.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ]
 }
